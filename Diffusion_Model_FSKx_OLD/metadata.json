@@ -1,0 +1,111 @@
+{
+  "modelType" : "genericModel",
+  "generalInformation" : {
+    "name" : "Sandra Model",
+    "identifier" : "382d399c-427a-47e3-9115-44243c5108e3",
+    "creationDate" : [ 2023, 6, 26 ],
+    "modificationDate" : [ [ 2023, 6, 26 ], [ 2023, 6, 26 ], [ 2023, 7, 7 ], [ 2023, 7, 7 ] ],
+    "reference" : [ ],
+    "languageWrittenIn" : "Python 3.9.12",
+    "modelCategory" : {
+      "modelClass" : "Generic model"
+    }
+  },
+  "scope" : { },
+  "dataBackground" : {
+    "study" : { }
+  },
+  "modelMath" : {
+    "parameter" : [ {
+      "id" : "df_shops",
+      "classification" : "OUTPUT",
+      "name" : "df_shops",
+      "description" : "This contains data about the stores in the grid. It includes the x and y coordinates of each store, the chain to which the store belongs, the sales of the store, and the ID of the grid cell in which the store is located. ",
+      "unit" : "[]",
+      "dataType" : "MATRIXOFNUMBERS"
+    }, {
+      "id" : "empirical_mean_shopping_distance",
+      "classification" : "INPUT",
+      "name" : "empirical_mean_shopping_distance",
+      "description" : "This parameter represents the average distance that individuals travel for shopping, measured in kilometers. For example, empirical_mean_shopping_distance = 0.4",
+      "unit" : "km",
+      "unitCategory" : "Length",
+      "dataType" : "DOUBLE",
+      "value" : "0.4"
+    }, {
+      "id" : "tolerance",
+      "classification" : "INPUT",
+      "name" : "tolerance",
+      "description" : "This parameter is used to decide when a satisfactory solution is reached in the model. It defines the tolerance for the deviation between the empirical and calculated average shopping distance, measured in kilometers. For example, tolerance = 0.001 .",
+      "unit" : "km",
+      "dataType" : "DOUBLE",
+      "value" : "0.001"
+    }, {
+      "id" : "population_per_cell",
+      "classification" : "INPUT",
+      "name" : "population_per_cell",
+      "description" : "This parameter represents the uniform population in each cell. For example, population_per_cell = 5 means there are 5 individuals in each cell.",
+      "unit" : "Number of persons",
+      "dataType" : "INTEGER",
+      "value" : "5"
+    }, {
+      "id" : "no_of_cells",
+      "classification" : "INPUT",
+      "name" : "no_of_cells",
+      "description" : "It defines the total number of cells in the test field. It should be a perfect square number to create a square grid. For example, no_of_cells = 100 will create a 10x10 grid, with each cell measuring 100m x 100m.",
+      "unit" : "number of cells in the field",
+      "dataType" : "INTEGER",
+      "value" : "100"
+    }, {
+      "id" : "x_coord",
+      "classification" : "INPUT",
+      "name" : "x_coord",
+      "description" : "x_coord and y_coord : These are lists that represent the x and y coordinates of the shops respectively. The coordinates should not be round numbers to prevent a shop from being within 4 cells simultaneously. The coordinates should be within the range of the test field. For a 100-cell field, the coordinates should range from 0 to 1000. For example, x_coord = [112, 823, 888, 105, 487] and y_coord = [198, 112, 846, 855, 537] .",
+      "unit" : "coordenates",
+      "dataType" : "VECTOROFNUMBERS",
+      "value" : "[112, 823, 888, 105, 487]"
+    }, {
+      "id" : "y_coord",
+      "classification" : "INPUT",
+      "name" : "y_coord",
+      "description" : "x_coord and y_coord : These are lists that represent the x and y coordinates of the shops respectively. The coordinates should not be round numbers to prevent a shop from being within 4 cells simultaneously. The coordinates should be within the range of the test field. For a 100-cell field, the coordinates should range from 0 to 1000. For example, x_coord = [112, 823, 888, 105, 487] and y_coord = [198, 112, 846, 855, 537] .",
+      "unit" : "coordenates",
+      "dataType" : "VECTOROFNUMBERS",
+      "value" : "[198, 112, 846, 855, 537]"
+    }, {
+      "id" : "Chain",
+      "classification" : "INPUT",
+      "name" : "Chain",
+      "description" : "This is a list that represents the chain to which each shop belongs. For example, Chain = [\"Chain 1\", \"Chain 1\", \"Chain 2\", \"Chain 2\", \"Chain 2\"] .",
+      "unit" : "[]",
+      "dataType" : "VECTOROFSTRINGS",
+      "value" : "[\"Chain 1\", \"Chain 1\", \"Chain 1\", \"Chain 1\", \"Chain 1\"]"
+    }, {
+      "id" : "Sales",
+      "classification" : "INPUT",
+      "name" : "Sales",
+      "description" : "This is a list that represents the sales of each shop. For example, Sales = [1000, 1000, 1000, 1000, 1000] .",
+      "unit" : "[]",
+      "dataType" : "VECTOROFNUMBERS",
+      "value" : "[1000, 1000, 1000, 1000, 1000]"
+    }, {
+      "id" : "populationFile",
+      "classification" : "OUTPUT",
+      "name" : "populationFile",
+      "unit" : "[]",
+      "dataType" : "FILE"
+    }, {
+      "id" : "flowFile",
+      "classification" : "OUTPUT",
+      "name" : "flowFile",
+      "unit" : "[]",
+      "dataType" : "FILE"
+    }, {
+      "id" : "shopsFile",
+      "classification" : "OUTPUT",
+      "name" : "shopsFile",
+      "unit" : "[]",
+      "dataType" : "FILE"
+    } ]
+  }
+}
